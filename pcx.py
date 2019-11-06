@@ -16,6 +16,6 @@ if len(arglist) > 1:
 
 rawargs = " ".join(["'" + x + "'" for x in arglist])
 
-os.chdir(Path('/home/alexey/spaces/elixir/ex_procr'))
+os.chdir(Path('/home/alexey/spaces/elixir/ex-procr'))
 
 os.system("mix pcx.run " + rawargs)

@@ -56,16 +56,12 @@ defmodule ExProcr.Album do
 
   defp twimc(optimus) do
     # Call once to set up everything for everybody.
-    if File.exists?(optimus.args.src_dir) do
-      nil
-    else
+    if not File.exists?(optimus.args.src_dir) do
       IO.puts("Source directory \"#{optimus.args.src_dir}\" is not there.")
       exit(:shutdown)
     end
 
-    if File.exists?(optimus.args.dst_dir) do
-      nil
-    else
+    if not File.exists?(optimus.args.dst_dir) do
       IO.puts("Destination path \"#{optimus.args.dst_dir}\" is not there.")
       exit(:shutdown)
     end
@@ -108,13 +104,9 @@ defmodule ExProcr.Album do
       )
 
       exit(:shutdown)
-    else
-      nil
     end
 
-    if optimus.flags.drop_dst or optimus.flags.dry_run do
-      nil
-    else
+    if not optimus.flags.drop_dst and not optimus.flags.dry_run do
       if File.exists?(executive_dst) do
         if optimus.flags.overwrite do
           File.rm_rf!(executive_dst)
@@ -173,7 +165,7 @@ defmodule ExProcr.Album do
         traverse_flat_dst(v, v.o.args.src_dir)
       end
 
-    if v.o.flags.verbose, do: nil, else: IO.write("Starting ")
+    if not v.o.flags.verbose, do: IO.write("Starting ")
 
     if v.o.flags.reverse do
       for {entry, i} <- Enum.with_index(ammo_belt) do
@@ -185,7 +177,7 @@ defmodule ExProcr.Album do
       end
     end
 
-    if v.o.flags.verbose, do: nil, else: IO.puts(" Done (#{v.total}).")
+    if not v.o.flags.verbose, do: IO.puts(" Done (#{v.total}).")
   end
 
   defp set_tags(v, src, dst, i) do
@@ -256,9 +248,7 @@ defmodule ExProcr.Album do
   defp copy_file(v, entry, i) do
     {src, dst} = entry
 
-    if v.o.flags.dry_run do
-      nil
-    else
+    if not v.o.flags.dry_run do
       File.copy!(src, dst)
       set_tags(v, src, dst, i)
     end
