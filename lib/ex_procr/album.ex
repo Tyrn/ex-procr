@@ -5,6 +5,10 @@ defmodule ExProcr.Album do
   """
 
   defmodule Audio do
+    @moduledoc """
+    Detecting audio files in file system.
+    """
+
     def file?(ppid, file_type, path) do
       :python.call(ppid, :mutagenstub, :is_audiofile, [path, file_type])
     end

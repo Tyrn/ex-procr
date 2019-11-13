@@ -1,4 +1,8 @@
 defmodule Counter do
+  @moduledoc """
+  Global counter.
+  """
+
   def init(seed) do
     {:ok, pid} = Agent.start_link(fn -> seed end)
     pid
