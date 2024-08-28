@@ -430,7 +430,7 @@ defmodule ExProcr.Album do
 
   """
   def str_strip_numbers(s) do
-    Enum.map(Regex.scan(~R{\d+}, s), &(Enum.at(&1, 0) |> String.to_integer()))
+    Enum.map(Regex.scan(~r{\d+}, s), &(Enum.at(&1, 0) |> String.to_integer()))
   end
 
   @doc """
@@ -484,7 +484,7 @@ defmodule ExProcr.Album do
       ) <> trail
     end
 
-    sans_monikers = Regex.replace(~R{\"(?:\\.|[^\"\\])*\"}, authors, " ")
+    sans_monikers = Regex.replace(~r{\"(?:\\.|[^\"\\])*\"}, authors, " ")
 
     Enum.join(
       for(
