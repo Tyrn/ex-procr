@@ -1,1 +1,7 @@
-## Procrustes SmArT
+# Procrustes SmArT
+
+## Mix usage
+
+```
+$ mix deps.get
+```

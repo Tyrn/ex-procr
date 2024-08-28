@@ -22,9 +22,9 @@ defmodule ExProcr.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:optimus, "~> 0.1.8"},
-      {:erlport, "~> 0.9"},
-      {:credo, "~> 1.1.0", only: [:dev, :test], runtime: false}
+      {:optimus, "~> 0.5.0"},
+      {:erlport, "~> 0.11.0"},
+      {:credo, "~> 1.7.7", only: [:dev, :test], runtime: false}
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
     ]
   end
