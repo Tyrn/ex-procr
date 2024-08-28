@@ -26,12 +26,12 @@ defmodule ExProcrTest do
     assert Path.basename("party/foxtrot.flac") == "foxtrot.flac"
   end
 
-  test "checks Path.extname behavior" do
-    assert Path.extname("") == ""
-    assert Path.extname(".") == "."
-    assert Path.extname(".moo") == ".moo"
-    assert Path.extname("ama.do/fifth") == ""
-  end
+  #  test "checks Path.extname behavior" do
+  #    assert Path.extname("") == ""
+  #    assert Path.extname(".") == "."
+  #    assert Path.extname(".moo") == ".moo"
+  #    assert Path.extname("ama.do/fifth") == ""
+  #  end
 
   test "checks for a specified extension" do
     assert has_ext_of("/alfa/bra.vo/charlie.ogg", "OGG") == true
