@@ -139,14 +139,14 @@ defmodule ExProcr.CLI do
         artist_tag: [
           value_name: "ARTIST_TAG",
           short: "-a",
-          long: "--artist-tag",
+          long: "--artist",
           help: "artist tag name",
           parser: :string
         ],
         album_tag: [
           value_name: "ALBUM_TAG",
-          short: "-g",
-          long: "--album-tag",
+          short: "-m",
+          long: "--album",
           help: "album tag name",
           parser: :string
         ]
